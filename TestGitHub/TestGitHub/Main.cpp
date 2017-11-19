@@ -13,6 +13,8 @@ int main()
 	cout << "Hello there whats your name??";
 	getline(cin, name);
 
+	cout << "goodby!!" << endl;
+
 	system("pause");
 	return 0;
 }
