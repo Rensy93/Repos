@@ -49,7 +49,6 @@ void Yatzee::expand()
 
 Yatzee::Yatzee(const Yatzee &originalobjekt)
 {
-	
 	makeCopy(originalobjekt);
 }
 

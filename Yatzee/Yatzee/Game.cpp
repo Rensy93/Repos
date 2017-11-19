@@ -28,7 +28,7 @@ int main()
 	while (!yatzee.areAllPlayersDone())
 	{
 		//Presentera protokollet för aktuell spelare
-		cout<<yatzee.protocolInfoOfCurrentPlayer() << endl << endl;
+		cout << yatzee.protocolInfoOfCurrentPlayer() << endl << endl;
 		//Kasta en omgång tärningar
 		yatzee.toss();
 		//Upprepa 2 gånger
@@ -36,7 +36,7 @@ int main()
 		{
 			int diceSave = -1;
 			//Visa tärningarnas utfall
-			cout<<yatzee.infoOfLatestToss() << endl;
+			cout << yatzee.infoOfLatestToss() << endl;
 			//Låt användaren mata in vilket tärningsvärde som ska sparas
 			cout << "enter the dice value that you like to save: ";
 			cin >> diceSave; cin.ignore();
@@ -44,7 +44,7 @@ int main()
 			yatzee.toss(diceSave);
 		}
 		//Visa tärningarnas utfall
-		cout<<yatzee.infoOfLatestToss() << endl;
+		cout << yatzee.infoOfLatestToss() << endl;
 		//Låt användaren mata in vilket tärningsvärde resultatet ska sparas på
 		int saveDices;
 		bool wasAdded = false;
@@ -64,13 +64,14 @@ int main()
 			}
 		}
 		//Presentera protokollkolumnen för aktuell spelare	
-		cout<<yatzee.protocolInfoOfCurrentPlayer()<<endl;
+		cout << yatzee.protocolInfoOfCurrentPlayer() << endl;
 		//Nästa spelares tur
 		yatzee.nextPlayersTurn();
-	}
+
 		//Rensa skärmen och pausa
-	system("cls");
-	system("pause");
+		system("cls");
+		system("pause");
+	}
 	//Presentera protokollkolumnen och totalsumman för varje spelare
 	for (int i = 0; i < nrOfPlayers; i++)
 	{
