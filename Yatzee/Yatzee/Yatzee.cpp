@@ -21,9 +21,12 @@ void Yatzee::freeMemory()
 	for (int i = 0; i < this->nrOfPlayers; i++)
 	{
 		if (this->protocls[i] != nullptr)
+		{
 			delete this->protocls[i];
-	}
+			this->protocls[i] = nullptr;
 
+		}
+	}
 	delete[] this->protocls;
 }
 
