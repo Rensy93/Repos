@@ -1,0 +1,60 @@
+svar till del 2.
+
+1. överlagring.
+2. datatyp namn på arrayen[capasiteten];
+3. 50, 20, 60, 10, 70, 90, 40, 30
+	10, 50, 20, 60, 70, 90, 40, 30
+	10, 20, 50, 60, 70, 90, 40, 30
+	10, 20, 30, 50, 60, 70, 90, 40
+	10, 20, 30, 40, 50, 60, 70, 90
+
+4. Formella parametrar: det är parametrarna som berättar vad soim ska skickas in ex. void exempel(string namn, int ålder)
+	Lokala variabler: de är variabler som deklareras inom ett block kod som bara finns i deta block till exempel variablen "i" i en forloop
+	Värde parametrar: de är de värden som skickas in när man kallar på en funkrtion ex: exempel("Rasmus", 24);
+
+5. Motiv 1: när man vill kunna ändra på värdet ex: när man legger till en ny spelare i ett spel så är det lempligt att nrOfSpelare är en referensparrameter så att antalet spelare ökas
+	motiv 2: för att man inte vi behöva kopiera något stort ex: ett objekt.
+
+6. int nummer[] = {5,3,4,9,8,15};
+
+7. defult(int heltalEtt,int heltalTvå )
+	{
+		this->heltalEtt = heltalEtt;
+		this->heltalTvå = heltalTvå;
+		this->heltalTre = 0;
+		this->heltalFyra = 0;
+	}
+
+8. Class: är det som sätter reglerna för hur ett objekt ska se ut ex: person ska ha namn, personNr och epost. vilket betyder att alla personer som skapas kommer att ha dessa tre informationer
+	Objekt: är en instans av classen.
+
+9. vector <string> name(5);
+
+10. if(nr%2==0){ detta är ett heltal}
+
+11. att något är inneslutet i ett block av kod inan för måsvingarna. {}
+
+12. int sökElement(string names[], string söktNamn, nrOfNamn); <--- prototyp
+	
+	int sökElement(string names[], string söktNamn, nrOfNamn) <--- Deklaration
+	{
+		int pos = -1
+		for(int i = 0; i<nrOfNamn; i++)
+		{
+			if(namns[i].getName()==söktNamn)
+			{
+			
+				pos = i;
+			
+			}
+
+		}
+			
+		return pos;
+	
+	}
+
+13. Binärsöking är man tillexempel har en array men 1000 platser så börjar man på plats 500 och om det man söker är > array[500] så struntar man i allt som är mellan plats 500-0 
+	en tar man och dellar antalet platser men två och kontrolerar igen och struntar i den delen som inte kan inehåla det sökta värdet.
+	Dock är ett krav för att binärsökning ska kunna genomföras att arrayen är sorterad annars kommer det ej att funger.
+
