@@ -1,7 +1,10 @@
-#include <iostream>
-#include <string>
+#include "Random.h"
 
-using namespace std;
+//#include <iostream>
+//#include <string>
+
+
+
 
 int main()
 {
@@ -10,11 +13,7 @@ int main()
 	cout << "Hello there whats your name??";
 	getline(cin, name);
 
-	cout << "Hello " << name << endl 
-		<< " I'm Rensy and I'm an A.S.I" << endl << endl;
-
-
-
 	system("pause");
 	return 0;
 }
+
