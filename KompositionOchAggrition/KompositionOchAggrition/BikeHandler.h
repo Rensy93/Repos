@@ -12,7 +12,7 @@ private:
 public:
 	BikeHandler(int caspasity = 10);
 	~BikeHandler();
-	//BikeHandler(const BikeHandler &other);
+	BikeHandler(const BikeHandler &other);
 	//BikeHandler& operator=(const BikeHandler &other);
 
 	bool addBike(string color, string maker, int nrOfGears);

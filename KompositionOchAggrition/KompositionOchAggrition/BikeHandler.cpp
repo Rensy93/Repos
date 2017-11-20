@@ -1,9 +1,9 @@
 #include "BikeHandler.h"
 
-BikeHandler::BikeHandler(int caspasity = 10)
+BikeHandler::BikeHandler(int caspasity)
 {
 	this->nrOfBikes=0;
-	this->capasity = capasity;
+	this->capasity = caspasity;
 	this->bikes = new Bike*[this->capasity];
 }
 BikeHandler::~BikeHandler()
@@ -16,7 +16,19 @@ BikeHandler::~BikeHandler()
 
 	delete[] bikes;
 }
-//BikeHandler(const BikeHandler &other);
+BikeHandler::BikeHandler(const BikeHandler &other)
+{
+
+	this->capasity = other.capasity;
+	this->nrOfBikes = other.nrOfBikes;
+	this->bikes = new Bike*[this->capasity];
+
+	for (int i = 0; i < this->nrOfBikes; i++)
+	{
+		this->bikes[i] = new Bike(*other.bikes[i]);
+	}
+
+}
 //BikeHandler& operator=(const BikeHandler &other);
 
 bool BikeHandler::addBike(string color, string maker, int nrOfGears)
@@ -50,7 +62,7 @@ bool BikeHandler::addBike(string color, string maker, int nrOfGears)
 }
 void BikeHandler::getAllBikesAssString(string bikeList[], int capOfBickeList)const
 {
-	for (int i = 0; i < nrOfBikes && i<capasity; i++)
+	for (int i = 0; i < nrOfBikes && i<=capasity; i++)
 	{
 		bikeList[i] = this->bikes[i]->toString();
 	}
