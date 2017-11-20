@@ -70,10 +70,10 @@ int main()
 	testingCopyConstructor(aYatzee);
 
 	
-	cout<<"Antalet spelare: " << aYatzee.getNrOfPlayers() << endl;
 	aYatzee.addPlayer("Rune");
 
 	aYatzee.addPlayer("Lisa");
+	cout<<"Antalet spelare: " << aYatzee.getNrOfPlayers() << endl;
 	cout << endl;
 	for (int i = 0; i < aYatzee.getNrOfPlayers(); i++)
 	{

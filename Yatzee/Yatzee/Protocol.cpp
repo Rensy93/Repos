@@ -1,6 +1,6 @@
 #include "Protocol.h"
 
-
+//construktors and destruktor
 Protocol::Protocol()
 {
 
@@ -19,6 +19,7 @@ Protocol::Protocol(string playerName)
 }
 Protocol::~Protocol() {}
 
+//get Funktions
 string Protocol::getPlayerName() const
 {
 	return this->playerName;
@@ -28,6 +29,7 @@ int Protocol::getSum() const
 	return this->totalSum;
 }
 
+//result and protocol stuff
 bool Protocol::isFilled() const
 {
 	bool isfille = true;
@@ -58,6 +60,7 @@ bool Protocol::addResult(int diceValue, int result)
 	return wasAdded;
 }
 
+//Betty special
 string Protocol::toString()const
 {
 	string statment = +"Name: " + this->playerName + "\n";

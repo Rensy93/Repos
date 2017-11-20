@@ -1,21 +1,13 @@
 #include "Yatzee.h"
 #include <sstream>
 #include "Dice.h"
-Yatzee::Yatzee(int players)
-{
-	this->maxNrOfPlayers = players; 
-	this->protocls = new Protocol*[this->maxNrOfPlayers];
-	this->currentPlayer = 0;
-	this->nrOfPlayers = 0;
-	this->initiate(0);
-}
 
-Yatzee::~Yatzee() 
+//Member funktions
+void Yatzee::initiate(int from)
 {
-	this->freeMemory();
-	this->nrOfPlayers = 0;
+	for (int i = from; i < this->maxNrOfPlayers-1; i++)
+		this->protocls[i] = nullptr;
 }
-
 void Yatzee::freeMemory()
 {
 	for (int i = 0; i < this->nrOfPlayers; i++)
@@ -29,13 +21,6 @@ void Yatzee::freeMemory()
 	}
 	delete[] this->protocls;
 }
-
-void Yatzee::initiate(int from)
-{
-	for (int i = from; i < this->maxNrOfPlayers-1; i++)
-		this->protocls[i] = nullptr;
-}
-
 void Yatzee::expand()
 {
 	this->maxNrOfPlayers += 10;
@@ -49,12 +34,6 @@ void Yatzee::expand()
 	temp = nullptr;
 	this->initiate(this->nrOfPlayers);
 }
-
-Yatzee::Yatzee(const Yatzee &originalobjekt)
-{
-	makeCopy(originalobjekt);
-}
-
 void Yatzee::makeCopy(const Yatzee &originalObjekt)
 {
 	this->maxNrOfPlayers = originalObjekt.maxNrOfPlayers;
@@ -69,6 +48,26 @@ void Yatzee::makeCopy(const Yatzee &originalObjekt)
 	this->initiate(this->nrOfPlayers);
 }
 
+//kunstruktor & dekonstruktor
+Yatzee::Yatzee(int players)
+{
+	this->maxNrOfPlayers = players; 
+	this->protocls = new Protocol*[this->maxNrOfPlayers];
+	this->currentPlayer = 0;
+	this->nrOfPlayers = 0;
+	this->initiate(0);
+}
+Yatzee::~Yatzee() 
+{
+	this->freeMemory();
+	this->nrOfPlayers = 0;
+}
+
+//copykunstruktor and assign operator
+Yatzee::Yatzee(const Yatzee &originalobjekt)
+{
+	makeCopy(originalobjekt);
+}
 Yatzee& Yatzee::operator=(const Yatzee &originalObjekt)
 {
 	if (this != &originalObjekt)
@@ -80,6 +79,7 @@ Yatzee& Yatzee::operator=(const Yatzee &originalObjekt)
 	return *this;
 }
 
+//Player funktions
 int Yatzee::findPlayer(const string name)
 {
 	int pos = -1;
@@ -96,12 +96,23 @@ int Yatzee::findPlayer(const string name)
 
 	return pos;
 }
-
+void Yatzee::nextPlayersTurn()
+{
+	if (this->currentPlayer < this->nrOfPlayers-1)
+	{
+		this->currentPlayer++;
+	}
+	else
+	{
+		this->currentPlayer = 0;
+	}
+}
 int Yatzee::getNrOfPlayers() const
 {
 	return this->nrOfPlayers;
 }
 
+//Add funktions
 void Yatzee::addPlayer(const string name)
 {
 	if (this->nrOfPlayers >= this->maxNrOfPlayers)
@@ -114,7 +125,6 @@ void Yatzee::addPlayer(const string name)
 		nrOfPlayers++;
 	//}
 }
-
 bool Yatzee::addResult(int diceValue)
 {
 	bool wasAdded = false;
@@ -133,39 +143,16 @@ bool Yatzee::addResult(int diceValue)
 	return wasAdded;
 }
 
+//Current player funktions
 string Yatzee::nameOfCurrentPlayer()const
 {
 	
 	return this->protocls[currentPlayer]->getPlayerName();
 }
-
 string Yatzee::protocolInfoOfCurrentPlayer()const
 {
 	return this->protocls[currentPlayer]->toString();
 }
-
-string Yatzee::infoOfLatestToss()const
-{
-	stringstream  out;
-
-	for (int i = 0; i < nrOfDices; i++)
-		out << "Dice " << i + 1 << " : " << dices[i].getCurrentValue() << ", ";
-
-	return out.str();
-}
-
-void Yatzee::nextPlayersTurn()
-{
-	if (this->currentPlayer < this->nrOfPlayers-1)
-	{
-		this->currentPlayer++;
-	}
-	else
-	{
-		this->currentPlayer = 0;
-	}
-}
-
 bool Yatzee::areAllPlayersDone()const
 {
 	bool isDone = true;
@@ -183,6 +170,14 @@ bool Yatzee::areAllPlayersDone()const
 	return isDone;
 }
 
+//Dice releted funktions
+void Yatzee::toss()
+{
+	for (int i = 0; i < nrOfDices; i++)
+	{
+		dices[i].toss();
+	}
+}
 void Yatzee::toss(int diceValue)
 {
 
@@ -194,11 +189,22 @@ void Yatzee::toss(int diceValue)
 		}
 
 	}
+
 }
-void Yatzee::toss()
+string Yatzee::infoOfLatestToss()const
 {
+	stringstream  out;
+
 	for (int i = 0; i < nrOfDices; i++)
-	{
-		dices[i].toss();
-	}
+		out << "Dice " << i + 1 << " : " << dices[i].getCurrentValue() << ", ";
+
+	return out.str();
 }
+
+
+
+
+
+
+
+
