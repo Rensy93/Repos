@@ -6,6 +6,7 @@ Protocol::Protocol()
 
 	this->playerName = "";
 	this->totalSum = 0;
+	// initzerar till -1 eftersom att man kan stryka i yatzee aka få noll
 	for (int i = 0; i < CAP; i++)
 		this->results[i] = -1;
 
@@ -64,6 +65,7 @@ string Protocol::toString()const
 
 	for (int i = 0; i < CAP; i++)
 	{
+		// ser till så att 0 skrivs ut istälet för -1
 		if (results[i] >= 0)
 		{
 			statment += to_string(i + 1) + " | " + to_string(results[i]) + "\n";
