@@ -22,7 +22,7 @@ public:
 
 	//Betty Special
 	//överskugning
-	string toString() const;
-
+	//string toString() const;
+	string toStringSpecifik() const;
 
 };

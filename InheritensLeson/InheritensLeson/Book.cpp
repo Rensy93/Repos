@@ -22,7 +22,7 @@ void Book::setAuthor(const string Author)
 	this->author = author;
 }
 
-string Book::toString() const
+string Book::toStringSpecifik() const
 {
-	return Media::toString() + "By: " +this->author;
+	return "By: " +this->author;
 }

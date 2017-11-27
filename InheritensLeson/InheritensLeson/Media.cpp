@@ -35,5 +35,10 @@ void Media::setPubYear(const int pubYear)
 
 string Media::toString() const
 {
-	return this->title + " was published: "+to_string(pubYear);
+	return this->title + " was published: "+to_string(pubYear)+" "
+		+ this->toStringSpecifik();
+
+	// calls toStringSpecifik() styrs av vilken klasstyp
+	//obkjektet är av dvs är det en bok exevikveras book klassens BettySpecialTvå
 }
+

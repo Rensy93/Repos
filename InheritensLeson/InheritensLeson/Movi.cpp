@@ -36,7 +36,8 @@ void Movi::setMainActor(const string mainActor)
 }
 
 
-string Movi::toString() const
+string Movi::toStringSpecifik() const
 {
-	return Media::toString() + " And has a play time of: " + to_string(this->playTime) + "ft."+MainActor;
+	return " And has a play time of: " 
+		+ to_string(this->playTime) + "ft."+MainActor;
 }

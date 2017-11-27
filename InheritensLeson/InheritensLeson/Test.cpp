@@ -7,7 +7,7 @@ int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	Media *mPtr = new Media();
+	Media *mPtr = new Movi("Qt heros", 2017,247,"Qt kids");
 	Book *bPtr = new Book("c++", 2016, "gaddis");
 	Movi *moPtr = new Movi("Qt masters", 2017, 247, "Qt kids");
 

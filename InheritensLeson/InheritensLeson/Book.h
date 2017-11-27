@@ -17,6 +17,6 @@ public:
 	void setAuthor(const string Author);
 
 	//betty Special
-	string toString() const;
+	string toStringSpecifik() const;
 
 };
