@@ -15,6 +15,17 @@ public:
 	MediaHandler(const MediaHandler& otherObjekt);
 	MediaHandler& operator=(const MediaHandler& otherObjekt);
 
-	void addBook(string title, string author, int year);
+	void addBook(string title, int pubYear, string author);
+	void addMovi(string title, int pubYear, int playTime, string mainActore);
+	void getAllMediasAsString(string arr[], int CApOfArr) const;
+
+	int getCurrentNr()const;
+
+	int nrOfBooks() const;
+	int nrOfMovies()  const;
+	void getAllBooksAsString(string arr[], int CApOfArr);
+	void getAllMoviesAsString(string arr[], int CApOfArr);
+	void getAllTitlesOfAuthor(string theAuthor, string arr[], int CApOfArr, int &nrOfTitles) const;
+	int longestPlayerTime() const;
 
 };

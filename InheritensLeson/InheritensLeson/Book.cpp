@@ -26,3 +26,13 @@ string Book::toStringSpecifik() const
 {
 	return "By: " +this->author;
 }
+
+Book::Book(const Book &otherObjekt)
+	:Media(otherObjekt)
+{
+	this->author = otherObjekt.author;
+}
+Media* Book::clone() const
+{
+	return new Book(*this);
+}

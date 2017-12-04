@@ -41,3 +41,8 @@ string Movi::toStringSpecifik() const
 	return " And has a play time of: " 
 		+ to_string(this->playTime) + "ft."+MainActor;
 }
+
+Media* Movi::clone() const
+{
+	return new Movi(*this);
+}

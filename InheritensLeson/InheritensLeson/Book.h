@@ -9,6 +9,7 @@ private:
 	string author;
 
 public:
+	Book(const Book &otherObjekt);
 	Book();
 	Book(string title, int pubYear, string author);
 	~Book();
@@ -18,5 +19,6 @@ public:
 
 	//betty Special
 	string toStringSpecifik() const;
+	Media* Book::clone() const
 
 };

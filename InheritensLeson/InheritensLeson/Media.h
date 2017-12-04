@@ -25,6 +25,8 @@ public:
 	void setTitle(const string title);
 	void setPubYear(const int pubYear);
 
+	virtual Media* clone() const = 0;//skapa en kopia och retunera
+
 	//Betty special
 	//virtual string toString() const;//viriautel medför sen bindning, dynamisk bindning
 									// om inte virtual är tidig bindning, static binding 							
