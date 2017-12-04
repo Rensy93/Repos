@@ -32,7 +32,7 @@ Book::Book(const Book &otherObjekt)
 {
 	this->author = otherObjekt.author;
 }
-Media* Book::clone() const
+Book* Book::clone() const
 {
 	return new Book(*this);
 }

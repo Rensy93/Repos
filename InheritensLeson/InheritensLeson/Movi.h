@@ -24,5 +24,5 @@ public:
 	//överskugning
 	//string toString() const;
 	string toStringSpecifik() const;
-	Media* Movi::clone() const;
+	Movi* Movi::clone() const;
 };

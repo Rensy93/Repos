@@ -27,6 +27,9 @@
     <ClInclude Include="MediaHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Media.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MediaHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassTemplates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

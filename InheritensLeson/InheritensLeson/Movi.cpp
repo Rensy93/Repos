@@ -42,7 +42,7 @@ string Movi::toStringSpecifik() const
 		+ to_string(this->playTime) + "ft."+MainActor;
 }
 
-Media* Movi::clone() const
+Movi* Movi::clone() const
 {
 	return new Movi(*this);
 }

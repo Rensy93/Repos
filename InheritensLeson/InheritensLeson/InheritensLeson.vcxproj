@@ -116,9 +116,11 @@
     <ClInclude Include="Media.h" />
     <ClInclude Include="MediaHandler.h" />
     <ClInclude Include="Movi.h" />
+    <ClInclude Include="MyVector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
+    <ClCompile Include="ClassTemplates.cpp" />
     <ClCompile Include="Media.cpp" />
     <ClCompile Include="MediaHandler.cpp" />
     <ClCompile Include="MediaTestingTypeCasting.cpp" />

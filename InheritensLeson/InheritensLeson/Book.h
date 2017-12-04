@@ -19,6 +19,6 @@ public:
 
 	//betty Special
 	string toStringSpecifik() const;
-	Media* Book::clone() const
+	Book* Book::clone() const
 
 };
