@@ -12,8 +12,8 @@ private:
 public:
 
 	MyVector(int capacity = 10);
-	/*virtual ~MyVector();
 	MyVector(const MyVector &otherObjekt);
+	/*virtual ~MyVector();
 	MyVector& operator=(const MyVector &otherObjekt);*/
 
 	void addLast(T item);
@@ -29,7 +29,7 @@ public:
 	void clear();
 	int size() const;*/
 	/*Operatorer
-		+ operatorn
+		+ operatorn // vect3 = vect + vect2;
 		[]operatorn*/
 
 };
@@ -61,3 +61,5 @@ T MyVector<T>::getLast() const
 		cout << "Are you trying to troll me or what!!" << endl;
 	}
 }
+template<typename T>
+MyVector<T>::MyVector(const MyVector<T> &otherObjekt);
