@@ -20,9 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E09434F3-FD0C-4E11-A338-CD64E5F745BE}</ProjectGuid>
-    <RootNamespace>KompositionOchAggrition</RootNamespace>
+    <ProjectGuid>{B721F72B-A230-46F7-9D46-539539AC4145}</ProjectGuid>
+    <RootNamespace>InheritensLeson</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>MediaRegister</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -111,13 +112,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bike.h" />
-    <ClInclude Include="BikeHandler.h" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="Media.h" />
+    <ClInclude Include="MediaHandler.h" />
+    <ClInclude Include="Movi.h" />
+    <ClInclude Include="MyVector.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bike.cpp" />
-    <ClCompile Include="BikeHandler.cpp" />
-    <ClCompile Include="BikeHandlerTest.cpp" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="ClassTemplates.cpp" />
+    <ClCompile Include="Media.cpp" />
+    <ClCompile Include="MediaHandler.cpp" />
+    <ClCompile Include="MediaTestingTypeCasting.cpp" />
+    <ClCompile Include="Movi.cpp" />
+    <ClCompile Include="Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,21 +15,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bike.h">
+    <ClInclude Include="Media.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BikeHandler.h">
+    <ClInclude Include="Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Movi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bike.cpp">
+    <ClCompile Include="Media.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BikeHandler.cpp">
+    <ClCompile Include="Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BikeHandlerTest.cpp">
+    <ClCompile Include="Movi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaTestingTypeCasting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassTemplates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

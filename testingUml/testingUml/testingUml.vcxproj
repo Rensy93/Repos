@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E09434F3-FD0C-4E11-A338-CD64E5F745BE}</ProjectGuid>
-    <RootNamespace>KompositionOchAggrition</RootNamespace>
+    <ProjectGuid>{E5645223-EC27-4D16-9910-3F5CBE6A6DBC}</ProjectGuid>
+    <RootNamespace>testingUml</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,13 +111,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bike.h" />
-    <ClInclude Include="BikeHandler.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Bike.cpp" />
-    <ClCompile Include="BikeHandler.cpp" />
-    <ClCompile Include="BikeHandlerTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

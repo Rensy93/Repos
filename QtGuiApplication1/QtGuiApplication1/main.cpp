@@ -7,4 +7,9 @@ int main(int argc, char *argv[])
 	QtGuiApplication1 w;
 	w.show();
 	return a.exec();
+
+	QApplication app(argc, argv);
+	QtGuiApplication1 mainWindow;
+	mainWindow.showMaximized();
+	return app.exec();
 }

@@ -25,9 +25,9 @@ QT_BEGIN_NAMESPACE
 class Ui_QtGuiApplication1Class
 {
 public:
+    QWidget *centralWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
-    QWidget *centralWidget;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *QtGuiApplication1Class)
@@ -35,15 +35,16 @@ public:
         if (QtGuiApplication1Class->objectName().isEmpty())
             QtGuiApplication1Class->setObjectName(QStringLiteral("QtGuiApplication1Class"));
         QtGuiApplication1Class->resize(600, 400);
-        menuBar = new QMenuBar(QtGuiApplication1Class);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        QtGuiApplication1Class->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(QtGuiApplication1Class);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        QtGuiApplication1Class->addToolBar(mainToolBar);
         centralWidget = new QWidget(QtGuiApplication1Class);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         QtGuiApplication1Class->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(QtGuiApplication1Class);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 600, 26));
+        QtGuiApplication1Class->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(QtGuiApplication1Class);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        QtGuiApplication1Class->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(QtGuiApplication1Class);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         QtGuiApplication1Class->setStatusBar(statusBar);
