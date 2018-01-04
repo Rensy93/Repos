@@ -1,7 +1,6 @@
 #include"Skate.h"
 #include<sstream>
-#include<ctime>
-#include<cstdlib>
+
 
 using namespace std;
 

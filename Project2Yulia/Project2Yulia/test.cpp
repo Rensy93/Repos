@@ -13,6 +13,7 @@ void play(Skate teams[], int nrOf);
 
 int main()
 {
+	srand(time(0));
 	int cap = 0;
 	int nrOf = 0;
 	cout << "Hur många deltagare: " << endl;
@@ -45,9 +46,13 @@ int main()
 	cout << "Efter soretring***************************" << endl;
 	showToptre(teams, nrOf);
 	showAll(teams, nrOf);
+	for (int i = 0; i<3; i++)
+	{
+		cout << "place " << i + 1 << ": " << teams[i].toString() << endl;
+	}
 	
 
-
+	delete[]teams;
 	system("pause");
 	return 0;
 }
@@ -172,6 +177,7 @@ void showToptre(Skate teams[], int nrOf)
 		teams[i] = temp;
 
 	}
+	
 }
 
 void play(Skate teams[], int nrOf)
