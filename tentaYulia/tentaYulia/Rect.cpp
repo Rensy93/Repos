@@ -13,20 +13,20 @@ Rect::~Rect()
 
 }
 
-int Rect::hight() const
+int Rect::getHight() const
 {
 	return this->hight;
 }
-int Rect::wight() const
+int Rect::getWight() const
 {
 	return this->wight;
 }
 
-void Rect::hight(int hi)
+void Rect::setHight(int hi)
 {
 	this->hight = hi;
 }
-void Rect::wight(int wi)
+void Rect::setWight(int wi)
 {
 	this->wight = wi;
 }
@@ -34,6 +34,6 @@ void Rect::wight(int wi)
 string Rect::toStringSpec() const
 {
 	stringstream out;
-	out << "The wight is " << this->wight << " The hight is " << this->hight << endl;
+	out << "The wight is " << this->wight << " The hight is " << this->hight <<"After random move "<< toStringMot()<< endl;
 	return out.str();
 }

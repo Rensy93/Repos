@@ -5,6 +5,13 @@ using namespace std;
 
 class MotionRect : public Rect
 {
-private:
+
+public:
+	MotionRect(int x, int y, int hight, int wight);
+	virtual~MotionRect();
+
+	void changeX();
+	void changeY();
+	string toStringMot() const;
 
 };
