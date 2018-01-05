@@ -13,13 +13,12 @@ public:
 	Rect(int x, int y, int hight=0, int wight=0);
 	virtual~Rect();
 
-	int hight() const;
-	int wight() const;
+	int getHight() const;
+	int getWight() const;
 
-	void hight(int hi);
-	void wight(int wi);
+	void setHight(int hi);
+	void setWight(int wi);
 	 
 	string toStringSpec() const;
-
+	virtual string toStringMot() const=0;
 };
-//hejheh

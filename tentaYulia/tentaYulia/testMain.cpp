@@ -1,6 +1,6 @@
 #include"Rect.h"
 #include"Cirkel.h"
-
+#include"MotionRect.h"
 #include<iostream>
 
 
@@ -12,12 +12,12 @@ int main()
 	GeoFig* figurerArr[5];
 
 	//Skapa två Circle - objekt och tre Rectangle - objekt blandade i arrayen.
-
-	figurerArr[0] = new Rect(5, 5, 5, 5);
+	
+	figurerArr[0] = new MotionRect (5, 5, 5, 5);
 	figurerArr[1] = new Cirkel(1, 2, 5.1);
 	figurerArr[2] = new Cirkel(8, 6, 10.1);
-	figurerArr[3] = new Rect(7, 9, 3, 2);
-	figurerArr[4] = new Rect(7, 9, 3, 2);
+	figurerArr[3] = new MotionRect(7, 9, 3, 2);
+	figurerArr[4] = new MotionRect(7, 9, 3, 2);
 
 	//Presentera resultatet av toString() för alla objekten i arrayen. 
 	for(int i = 0; i < 5; i++)
@@ -48,6 +48,29 @@ int main()
 			}
 		}
 	}
+
+
+	for (int i = 0; i < 5; i++)
+	{
+		MotionRect* temp;
+		temp = dynamic_cast<MotionRect*>(figurerArr[i]);
+
+		if (temp != nullptr)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				temp->changeX();
+				temp->changeY();
+				cout << temp->toString() << endl;
+			}
+			
+			
+		}
+	
+	}
+
+
+
 	system("pause");
 	return 0;
 }

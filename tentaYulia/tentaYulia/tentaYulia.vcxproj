@@ -115,13 +115,16 @@
     <ClInclude Include="GeoGig.h" />
     <ClInclude Include="MotionRect.h" />
     <ClInclude Include="Rect.h" />
+    <ClInclude Include="Donation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cirkel.cpp" />
     <ClCompile Include="GeoFig.cpp" />
     <ClCompile Include="MotionRect.cpp" />
     <ClCompile Include="Rect.cpp" />
-    <ClCompile Include="testMain.cpp" />
+    <ClCompile Include="testMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
