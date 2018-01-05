@@ -30,7 +30,7 @@ public:
 	Yatzee& operator=(const Yatzee &originalObjekt);
 	
 	//Player funktions
-	int findPlayer(const string name);
+	int findPlayer(const string name)const;
 	int getNrOfPlayers() const;
 	void nextPlayersTurn();
 
