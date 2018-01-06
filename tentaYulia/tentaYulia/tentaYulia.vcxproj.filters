@@ -42,6 +42,12 @@
     <ClInclude Include="ShapeHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ConesAndBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boxes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cirkel.cpp">
@@ -72,6 +78,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShapeHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeHandlerTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConesAndBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Boxes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

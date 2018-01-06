@@ -1,22 +1,15 @@
 #include"ShapeHandler.h"
 
-void ShapeHandler::initiate(int from)
+void ShapeHandler::makeCopy(const ShapeHandler &other)
 {
-	for (int i = from; i < this->cap; i++)
+	this->cap = other.cap;
+	this->nrOf = other.nrOf;
+	this->shapes = new Geom*[cap];
+	for (int i = 0; i < other.nrOf; i++)
 	{
-		this->shapes[i] = nullptr;
+		this->shapes[i] = other.shapes[i]->clone();
 	}
-}
-void ShapeHandler::expand()
-{
-	this->cap += 5;
-	Geom** temp = new Geom*[cap];
-	for (int i = 0; i < nrOf; i++)
-	{
-		temp[i] = this->shapes[i];
-	}
-	delete[] this->shapes;
-	this->shapes = temp;
+	this->initiate(nrOf);
 }
 void ShapeHandler::freeMemory()
 {
@@ -26,19 +19,25 @@ void ShapeHandler::freeMemory()
 	}
 	delete[] this->shapes;
 }
-void ShapeHandler::makeCopy(const ShapeHandler &original)
+void ShapeHandler::expand() 
 {
-	this->cap = original.cap;
-	this->nrOf = original.nrOf;
-	this->shapes = new Geom*[cap];
-
-	for (int i = 0; i < original.nrOf; i++)
+	cap += 10;
+	Geom**temp = new Geom*[cap];
+	for (int i = 0; i < cap; i++)
 	{
-		this->shapes[i] = original.shapes[i]->clone();
+		temp[i] = this->shapes[i];
 	}
-	this->initiate(nrOf);
-}
+	delete[] this->shapes;
+	this->shapes = temp;
 
+}
+void ShapeHandler::initiate(int from)
+{
+	for (int i = from; i < cap; i++)
+	{
+		this->shapes[i] = nullptr;
+	}
+}
 ShapeHandler::ShapeHandler()
 {
 	this->cap = 10;
@@ -46,25 +45,18 @@ ShapeHandler::ShapeHandler()
 	shapes = new Geom*[cap];
 	this->initiate();
 }
-
-
+ShapeHandler::~ShapeHandler()
+{
+	this->freeMemory();
+}
 ShapeHandler::ShapeHandler(int cap, int nrOf)
 {
 	this->cap = cap;
 	this->nrOf = nrOf;
 	shapes = new Geom*[this->cap];
 	this->initiate();
-
-}
-ShapeHandler::~ShapeHandler()
-{
-	this->freeMemory();
 }
 
-ShapeHandler::ShapeHandler(const ShapeHandler &original)
-{
-	this->makeCopy(original);
-}
 ShapeHandler& ShapeHandler::operator=(const ShapeHandler &original)
 {
 	if (this != &original)
@@ -74,43 +66,49 @@ ShapeHandler& ShapeHandler::operator=(const ShapeHandler &original)
 	}
 	return *this;
 }
+ShapeHandler::ShapeHandler(const ShapeHandler &orginal)
+{
+	this->makeCopy(orginal);
+}
 
-void ShapeHandler::addCone(double radius, int hight)
+void ShapeHandler::addCone(double rad, double hei)
 {
-	if (cap == nrOf)
+	if (nrOf == cap)
 	{
 		this->expand();
 	}
-	this->shapes[nrOf++] = new Cone(radius, hight);
+	this->shapes[nrOf++] = new Cone(rad, hei);
 }
-void ShapeHandler::addBox(int wight, int lenght, int hight)
+void ShapeHandler::addBox(double wid, double len, double hei)
 {
-	if (cap == nrOf)
+	if (nrOf == cap)
 	{
 		this->expand();
 	}
-	this->shapes[nrOf] = new Parral(wight, lenght, hight);
+	this->shapes[nrOf++] = new Parral(wid, len, hei);
 }
-bool ShapeHandler::removeBox(int wight, int lenght, int hight)
+bool ShapeHandler::removeBox(double wid, double len, double hei)
 {
 	bool isOk = false;
 	Parral *ptr = nullptr;
 	for (int i = 0; i < nrOf && !isOk; i++)
 	{
-		ptr = dynamic_cast<Parral*>(shapes[i]);
-		if (ptr != nullptr && ptr->getHight() == hight && ptr->getLenght() == lenght && ptr->getWight() == wight)
+		ptr = dynamic_cast<Parral*>(this->shapes[i]);
+		if (ptr != nullptr && ptr->getHight() ==hei && 
+			ptr->getLenght()==len && ptr->getWight()==wid)
 		{
 			delete this->shapes[i];
-			this->shapes[i] = this->[--nrOf];
+			this->shapes[i] = this->shapes[--nrOf];
 			isOk = true;
 		}
+		
 	}
 	return isOk;
 }
-void ShapeHandler::getAll(string arr[], int capArr)
+void ShapeHandler::getAll(string arr[], int cap)
 {
 	for (int i = 0; i < nrOf; i++)
 	{
-		arr[i] = this->shapes[i]->toString(); 
+		arr[i] = this->shapes[i]->toString();
 	}
 }

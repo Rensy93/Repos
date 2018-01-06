@@ -8,27 +8,26 @@ class ShapeHandler
 private:
 	int cap;
 	int nrOf;
-	Geom* *shapes;
+	Geom** shapes;
 
 	//hjälp funktioner
-	void initiate(int from = 0);
-	void expand();
+	void makeCopy(const ShapeHandler &other);
 	void freeMemory();
-	void makeCopy(const ShapeHandler &original);
+	void expand();
+	void initiate(int from =0);
 
 public:
-	ShapeHandler(int cap, int nrOf);
 	ShapeHandler();
 	~ShapeHandler();
+	ShapeHandler(int cap, int nrOf);
 
-	ShapeHandler(const ShapeHandler &original);  //copykonstruktor
-	ShapeHandler& operator=(const ShapeHandler &original); //tilldelningsoperator
+	ShapeHandler& operator=(const ShapeHandler &original);
+	ShapeHandler(const ShapeHandler &orginal);
 
-	void addCone(double radius, int hight);
-	void addBox(int wight, int lenght, int hight);
-	bool removeBox(int wight, int lenght, int hight);
-	void getAll(string arr[], int capArr);
-
-
+	void addCone(double rad, double hei);
+	void addBox(double wid, double len, double hei);
+	bool removeBox(double wid, double len, double hei);
+	void getAll(string arr[], int cap);
+	
 
 };
