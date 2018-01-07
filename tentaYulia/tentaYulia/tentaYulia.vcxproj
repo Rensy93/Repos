@@ -111,34 +111,57 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Boxes.h" />
+    <ClInclude Include="Boxes.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Charity.h" />
     <ClInclude Include="Cirkel.h" />
     <ClInclude Include="Cone.h" />
-    <ClInclude Include="ConesAndBox.h" />
+    <ClInclude Include="ConesAndBox.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Donatin.h" />
     <ClInclude Include="Geom.h" />
     <ClInclude Include="GeoGig.h" />
     <ClInclude Include="MotionRect.h" />
+    <ClInclude Include="MyVector.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Parral.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Donation.h" />
     <ClInclude Include="ShapeHandler.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Boxes.cpp" />
+    <ClCompile Include="Boxes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Charity.cpp" />
     <ClCompile Include="Cirkel.cpp" />
     <ClCompile Include="Cone.cpp" />
-    <ClCompile Include="ConesAndBox.cpp" />
+    <ClCompile Include="ConesAndBox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Donatin.cpp" />
     <ClCompile Include="GeoFig.cpp" />
     <ClCompile Include="Geom.cpp" />
     <ClCompile Include="MotionRect.cpp" />
     <ClCompile Include="Parral.cpp" />
     <ClCompile Include="Rect.cpp" />
-    <ClCompile Include="ShapeHandler.cpp" />
-    <ClCompile Include="ShapeHandlerTest.cpp" />
+    <ClCompile Include="ShapeHandler.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ShapeHandlerTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ShapeTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="testDonation.cpp" />
     <ClCompile Include="testMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="TestMyVector.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>

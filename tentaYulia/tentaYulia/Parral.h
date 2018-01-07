@@ -1,5 +1,6 @@
 #pragma once
 #include"Geom.h"
+#include"MyVector.h"
 
 using namespace std;
 
