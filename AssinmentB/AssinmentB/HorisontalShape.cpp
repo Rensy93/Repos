@@ -6,9 +6,17 @@ HorisontalShape::HorisontalShape(int x, int y, int width, int height, int step)
 	this->xDirection = x;
 }
 HorisontalShape::~HorisontalShape(){}
+
 void HorisontalShape::changeDirection()
 {
 	this->xDirection *= -1;
+}
+
+HorisontalShape::HorisontalShape(const HorisontalShape& original)
+	:Shape(original)
+{
+	this->xDirection = original.xDirection;
+
 }
 
 string HorisontalShape::getDirectionAsString() const
@@ -43,7 +51,7 @@ void HorisontalShape::move()
 	}
 }
 
-HorisontalShape *HorisontalShape::clone()
+HorisontalShape *HorisontalShape::clone() const
 {
 	return new HorisontalShape(*this);
 }

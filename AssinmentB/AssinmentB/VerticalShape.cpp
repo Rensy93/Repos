@@ -7,6 +7,13 @@ VerticalShape::VerticalShape(int x, int y, int width, int height, int step)
 }
 VerticalShape::~VerticalShape(){}
 
+VerticalShape::VerticalShape(const VerticalShape& original)
+	:Shape(original)
+{
+	this->yDirection = original.yDirection;
+
+}
+
 void VerticalShape::changeDirection()
 {
 	this->yDirection *= -1;
@@ -44,7 +51,7 @@ void VerticalShape::move()
 	}
 }
 
-VerticalShape * VerticalShape::clone()
+VerticalShape * VerticalShape::clone()const
 {
 	return new VerticalShape(*this);
 }

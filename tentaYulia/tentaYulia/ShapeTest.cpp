@@ -8,7 +8,7 @@ using namespace std;
 const int cap = 5;
 int main()
 {
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	// Skapa en statiskt allokerad array innehållande 5 pekare av basklasstyp.
 	Geom *figurer[cap];
 	for (int i = 0; i < cap; i++)

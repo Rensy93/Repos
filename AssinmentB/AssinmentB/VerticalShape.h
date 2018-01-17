@@ -11,9 +11,10 @@ private:
 public:
 	VerticalShape(int x, int y, int width, int height, int step);
 	~VerticalShape();
+	VerticalShape(const  VerticalShape& original);
 	void changeDirection();
 	string getDirectionAsString() const;
 	string startString() const;
 	void move();
-	VerticalShape* clone();
+	VerticalShape* clone() const ;
 };
