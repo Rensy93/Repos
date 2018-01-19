@@ -13,9 +13,12 @@ Shape::Shape(int x, int y, int width, int height, int step)
 }
 Shape::Shape(const Shape &otherObject)
 {
-	this->coord = new Coord(*otherObject.coord);
-	this->box = new Box(*otherObject.box);
 	this->step = otherObject.step;
+	Coord* coordPtr = nullptr;
+	Box* boxPtr = nullptr;
+
+	this->coord = otherObject.coord->clone();
+	this->box = otherObject.box->clone();
 }
 Shape::~Shape()
 {

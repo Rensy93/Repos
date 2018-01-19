@@ -26,3 +26,8 @@ void Coord::changeYPos(const int change)
 {
 	this->yPos += change;
 }
+
+Coord* Coord::clone() const
+{
+	return new Coord(*this);
+}

@@ -20,15 +20,19 @@ private:
 public:
 
 	Shape(int x, int y, int width, int height, int step);
-	Shape(const Shape &otherObject);
 	virtual ~Shape();
+
+	Shape(const Shape &otherObject);
 	virtual Shape* clone() const = 0;
 
 	void changeCoord(const int xChange, const int yChange);
 	int getStep() const;
+
 	void changeStep(const int change);
 	bool intersectsWith(const Shape &otherShape);
+	
 	string toString() const;
+	
 	virtual void changeDirection() = 0;
 	virtual string getDirectionAsString() const = 0;
 	virtual string startString() const = 0;
