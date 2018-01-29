@@ -3,23 +3,23 @@
 
 using namespace std;
 
-template <typename T>
-Donation::Donation(string name, int summan);
-
-template <typename T>
-string Donation::getName();
-template <typename T>
-Donation::~Donation();
-template <typename T>
-string Donation::getName() const;
-template <typename T>
-int Donation::getSum() const;
-template <typename T>
-void Donation::setName();
-template <typename T>
-void Donation::setSum();
-template <typename T>
-string toString() const;
+//template <typename T>
+//Donation::Donation(string name, int summan);
+//
+//template <typename T>
+//string Donation::getName();
+//template <typename T>
+//Donation::~Donation();
+//template <typename T>
+//string Donation::getName() const;
+//template <typename T>
+//int Donation::getSum() const;
+//template <typename T>
+//void Donation::setName();
+//template <typename T>
+//void Donation::setSum();
+//template <typename T>
+//string toString() const;
 
 
 template <typename T>
@@ -37,8 +37,8 @@ public:
 	string getName() const;
 	int getSum() const;
 
-	void setName();
-	void setSum();
+	void setName(const string name);
+	void setSum(const int sum);
 
 	string toString() const;
 
@@ -49,34 +49,45 @@ public:
 
 
 template <typename T>
-Donation::Donation(string name, int summan)
+Donation<T>::Donation(string name, int summan)
 {
-	this->na
+	this->name = name;
+	this->summan = summan;
 }
 
 template <typename T>
-string Donation::getName()
+string Donation<T>::getName()
 {
 	return this->name;
 }
 
 template <typename T>
-Donation::~Donation()
+Donation<T>::~Donation()
 {}
 template <typename T>
-string Donation::getName() const
+string Donation<T>::getName() const
 {
 	return this->name;
 }
 
 template <typename T>
-int Donation::getSum() const
+int Donation<T>::getSum() const
 {
-	return this->
+	return this->summan;
 }
 template <typename T>
-void Donation::setName(){}
+void Donation<T>::setName(const string name)
+{
+	this->name = name;
+}
 template <typename T>
-void Donation::setSum(){}
+void Donation<T>::setSum(const int sum)
+{
+	this->summan = sum;
+}
 template <typename T>
-string toString() const{}
+string toString() const
+{
+	string statement = "name: "+this->name+"\nSumman: "+to_string(this->summan)+"\n";
+	return statement;
+}
