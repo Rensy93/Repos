@@ -2,26 +2,12 @@
 #include<string>
 #include<sstream>
 using namespace std;
-/*
+
 template <typename T>
 Donation::Donation(string name, int summan);
 
-template <typename T>
-string Donation::getName();
-template <typename T>
-Donation::~Donation();
-template <typename T>
-string Donation::getName() const;
-template <typename T>
-int Donation::getSum() const;
-template <typename T>
-void Donation::setName();
-template <typename T>
-void Donation::setSum();
-template <typename T>
-string toString() const;
 
-*/
+
 template <typename T>
 class Donation
 {
@@ -37,8 +23,8 @@ public:
 	string getName() const;
 	int getSum() const;
 
-	void setName(T namme);
-	void setSum(T summ);
+	void setName();
+	void setSum();
 
 	string toString() const;
 
@@ -56,13 +42,13 @@ Donation<T>::Donation(string name, int summan)
 }
 
 template <typename T>
-T Donation<T>::getName()
+string Donation::getName()
 {
 	return this->name;
 }
 
 template <typename T>
-Donation::~Donation()
+Donation<T>::~Donation()
 {}
 template <typename T>
 string Donation<T>::getName() const
@@ -71,25 +57,13 @@ string Donation<T>::getName() const
 }
 
 template <typename T>
-T Donation<T>::getSum() const
+int Donation::getSum() const
 {
-	return this->
+	return this->summan;
 }
 template <typename T>
-void Donation<T>::setName(T namme)
-{
-	this->name = namme;
-}
+void Donation::setName(){}
 template <typename T>
-void Donation<T>::setSum(T summ)
-{
-	this->summan = summ;
-}
+void Donation::setSum(){}
 template <typename T>
-string Donation<T> toString() const
-{
-	stringsteream out;
-	out << "Name: " << this->name << "\nSumman " < this->summan << endl;
-	return out.str();
-}
-
+string toString() const{}

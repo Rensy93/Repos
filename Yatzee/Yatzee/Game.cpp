@@ -58,7 +58,7 @@ int main()
 			cout << "You have alredy used that dice value, try agin!" << endl;
 			cout << "enter the dice value that you like to save and there value will be added to your protocol: ";
 			cin >> saveDices; cin.ignore();
-			if (!yatzee.addResult(saveDices))
+			if (yatzee.addResult(saveDices))
 			{
 				//Låt användaren mata in vilket tärningsvärde resultatet ska sparas på
 				wasAdded = true;
@@ -70,8 +70,8 @@ int main()
 		yatzee.nextPlayersTurn();
 
 		//Rensa skärmen och pausa
+		system("puase");
 		system("cls");
-		system("pause");
 	}
 	//Presentera protokollkolumnen och totalsumman för varje spelare
 	for (int i = 0; i < nrOfPlayers; i++)

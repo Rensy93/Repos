@@ -38,6 +38,7 @@ void Yatzee::makeCopy(const Yatzee &originalObjekt)
 {
 	this->maxNrOfPlayers = originalObjekt.maxNrOfPlayers;
 	this->nrOfPlayers = originalObjekt.nrOfPlayers;
+	this->currentPlayer = originalObjekt.currentPlayer;
 
 	this->protocls = new Protocol*[originalObjekt.maxNrOfPlayers];
 
@@ -80,7 +81,7 @@ Yatzee& Yatzee::operator=(const Yatzee &originalObjekt)
 }
 
 //Player funktions
-int Yatzee::findPlayer(const string name)
+int Yatzee::findPlayer(const string name)const
 {
 	int pos = -1;
 
