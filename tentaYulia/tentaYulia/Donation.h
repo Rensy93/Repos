@@ -1,25 +1,11 @@
 #pragma once
 #include<string>
-
+#include<sstream>
 using namespace std;
 
-//template <typename T>
-//Donation::Donation(string name, int summan);
-//
-//template <typename T>
-//string Donation::getName();
-//template <typename T>
-//Donation::~Donation();
-//template <typename T>
-//string Donation::getName() const;
-//template <typename T>
-//int Donation::getSum() const;
-//template <typename T>
-//void Donation::setName();
-//template <typename T>
-//void Donation::setSum();
-//template <typename T>
-//string toString() const;
+template <typename T>
+Donation::Donation(string name, int summan);
+
 
 
 template <typename T>
@@ -37,8 +23,8 @@ public:
 	string getName() const;
 	int getSum() const;
 
-	void setName(const string name);
-	void setSum(const int sum);
+	void setName();
+	void setSum();
 
 	string toString() const;
 
@@ -56,7 +42,7 @@ Donation<T>::Donation(string name, int summan)
 }
 
 template <typename T>
-string Donation<T>::getName()
+string Donation::getName()
 {
 	return this->name;
 }
@@ -71,23 +57,13 @@ string Donation<T>::getName() const
 }
 
 template <typename T>
-int Donation<T>::getSum() const
+int Donation::getSum() const
 {
 	return this->summan;
 }
 template <typename T>
-void Donation<T>::setName(const string name)
-{
-	this->name = name;
-}
+void Donation::setName(){}
 template <typename T>
-void Donation<T>::setSum(const int sum)
-{
-	this->summan = sum;
-}
+void Donation::setSum(){}
 template <typename T>
-string toString() const
-{
-	string statement = "name: "+this->name+"\nSumman: "+to_string(this->summan)+"\n";
-	return statement;
-}
+string toString() const{}

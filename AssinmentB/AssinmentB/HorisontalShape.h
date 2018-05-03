@@ -11,9 +11,10 @@ private:
 public:
 	HorisontalShape(int x, int y, int width, int height, int step);
 	~HorisontalShape();
+	HorisontalShape(const HorisontalShape& original);
 	void changeDirection();
 	string getDirectionAsString() const;
 	string startString() const;
 	void move();
-	HorisontalShape* clone();
+	HorisontalShape* clone() const;
 };

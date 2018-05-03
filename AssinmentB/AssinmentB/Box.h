@@ -15,5 +15,5 @@ public:
 
 	int getWidht()const;
 	int getHeight()const;
-
+	Box* clone() const;
 };

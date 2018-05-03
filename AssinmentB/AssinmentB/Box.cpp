@@ -17,3 +17,8 @@ int Box::getHeight()const
 {
 	return this->height;
 }
+
+Box* Box::clone() const
+{
+	return new Box(*this);
+}

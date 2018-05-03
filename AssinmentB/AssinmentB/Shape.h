@@ -5,10 +5,10 @@
 
 using namespace std;
 
-const std::string UP = "UP";
-const std::string DOWN = "DOWN";
-const std::string LEFT = "LEFT";
-const std::string RIGHT = "RIGHT";
+const string UP = "UP";
+const string DOWN = "DOWN";
+const string LEFT = "LEFT";
+const string RIGHT = "RIGHT";
 
 class Shape
 {
@@ -20,15 +20,19 @@ private:
 public:
 
 	Shape(int x, int y, int width, int height, int step);
-	Shape(Shape &otherObject);
 	virtual ~Shape();
-	virtual Shape* clone() = 0;
+
+	Shape(const Shape &otherObject);
+	virtual Shape* clone() const = 0;
 
 	void changeCoord(const int xChange, const int yChange);
 	int getStep() const;
+
 	void changeStep(const int change);
 	bool intersectsWith(const Shape &otherShape);
+	
 	string toString() const;
+	
 	virtual void changeDirection() = 0;
 	virtual string getDirectionAsString() const = 0;
 	virtual string startString() const = 0;

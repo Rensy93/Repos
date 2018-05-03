@@ -11,17 +11,21 @@ Shape::Shape(int x, int y, int width, int height, int step)
 	this->box = new Box(width, height);
 	this->step = step;
 }
-Shape::Shape(Shape &otherObject)
+Shape::Shape(const Shape &otherObject)
 {
-	this->coord = new Coord(*otherObject.coord);
-	this->box = new Box(*otherObject.box);
 	this->step = otherObject.step;
+	Coord* coordPtr = nullptr;
+	Box* boxPtr = nullptr;
+
+	this->coord = otherObject.coord->clone();
+	this->box = otherObject.box->clone();
 }
 Shape::~Shape()
 {
 	delete coord;
 	delete box;
 }
+
 
 void Shape::changeCoord(const int xChange, const int yChange)
 {
@@ -69,7 +73,7 @@ string Shape::toString() const
 {
 	string statment = "";
 
-	statment = "Position: x: " + to_string(coord->getXPos()) + " Y: " + to_string(coord->getYPos())
+	statment = startString() + "Position: x: " + to_string(coord->getXPos()) + " Y: " + to_string(coord->getYPos())
 		+ "\n" + getDirectionAsString() + "\n Step: " + to_string(getStep()) + "\n"
 		+ "Width: " + to_string(this->box->getWidht()) + " Height: " + to_string(this->box->getHeight());
 

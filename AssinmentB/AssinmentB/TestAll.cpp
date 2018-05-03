@@ -70,7 +70,7 @@ int main()
 	shapesCopy = new Shape*[capacity];
 	//Tillse att shapesCopy pekar ut identiska objekt med de objekt som shapes pekar ut
 	//Djupkopieraing ska användas!
-	for (int i = 0; i < nrOfShapes - 1; i++)
+	for (int i = 0; i < nrOfShapes; i++)
 	{
 		shapesCopy[i] = shapes[i]->clone();
 	}
@@ -82,7 +82,7 @@ int main()
 		cout<<shapesCopy[i]->toString();
 	}
 	//Tillse att inga minnesläckor finns
-	for (int i = 0; i < nrOfShapes-1; i++)
+	for (int i = 0; i < nrOfShapes; i++)
 	{
 		delete shapes[i];
 		delete shapesCopy[i];
